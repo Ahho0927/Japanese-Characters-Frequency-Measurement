@@ -1,7 +1,8 @@
 """import pykakasi to convert kanji or katakana to hiragana"""
 from re import sub
-import inspect
 from tqdm import tqdm
+from os import system
+import inspect
 
 from datasets import load_dataset
 from pykakasi import kakasi
@@ -22,6 +23,9 @@ for decimal_unicode in range(97, 122 +1):
     ROMAJI += chr(decimal_unicode)
 
 # print(HIRAGANA, KATAKANA, ROMAJI)
+
+# ====================================================
+system('cls')
 
 print('Loading Datas...')
 
