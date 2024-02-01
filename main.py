@@ -1,9 +1,17 @@
 """import pykakasi to convert kanji or katakana to hiragana"""
-from tqdm import tqdm
 from re import sub
+import inspect
+from tqdm import tqdm
+
+from datasets import load_dataset
 from pykakasi import kakasi
 kks = kakasi()
 
+def retrieve_name(var) -> str:
+    """A function that returns name of variable in string.
+    """
+    callers_local_vars = inspect.currentframe().f_back.f_locals.items()
+    return [var_name for var_name, var_val in callers_local_vars if var_val is var][0]
 
 HIRAGANA, KATAKANA, ROMAJI = '', '', ''
 for decimal_unicode in range(12352, 12447 +1):
@@ -16,8 +24,6 @@ for decimal_unicode in range(97, 122 +1):
 # print(HIRAGANA, KATAKANA, ROMAJI)
 
 print('Loading Datas...')
-
-from datasets import load_dataset
 
 dataset = load_dataset("izumi-lab/llm-japanese-dataset", revision="main")
 
@@ -33,8 +39,8 @@ for data in tqdm(dataset['train'], desc='Extracting Conversations'):
 print('Extraction Complete!\n')
 
 
-# Because the Kanji has so many characters including many unsual ones, 
-# kanji_count stores only used characters in dataset. 
+# Because the Kanji has so many characters including many unsual ones,
+# kanji_count stores only used characters in dataset.
 kanji_count = {}
 for sentence in tqdm(conversation, desc='Counting Kanji'):
     sentence = sub('[^\u3300-\u33ff\ufe30-\ufe4f\uf900-\ufaff\U0002F800-\U0002fa1f\u2e80-\u2eff\u4e00-\u9fff\u3400-\u4dbf\U00020000-\U0002a6df\U0002a700-\U0002b73f\U0002b740-\U0002b81f\U0002b820-\U0002ceaf]', '', sentence)
@@ -72,9 +78,9 @@ print('Convertion Complete!\n')
 
 
 with open('result.txt', 'w+', encoding='utf-8') as f:
-    for name in tqdm([hiragana_count, katakana_count, romaji_count, kanji_count], desc='Saving...'):
+    for name in [hiragana_count, katakana_count, romaji_count, kanji_count]:
         i = 0
-        for key, value in tqdm(name.items()):
+        for key, value in tqdm(name.items(), desc='Saving '+retrieve_name(name)):
             i += 1
             if i == 5:
                 f.write('\n')
