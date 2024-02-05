@@ -1,8 +1,7 @@
+[See in English](../README.md)[日本語で見る](README_ja.md)
+
 <h1 align="center" style="font-family: Georgia">일본어 문자 분석기</h1>
 <p align="center" style="font-family: Verdana">히라가나 & 가타카나 & 한자 빈도수 측정기</p>
-
-[日本語で見る](README_ja.md)\
-[See in English](../README.md)
 
 
 ## 개요
