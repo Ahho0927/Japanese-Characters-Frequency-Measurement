@@ -1,4 +1,4 @@
-[한국어](README_ko.md)[English](../README.md)
+[한국어](README_ko.md) [English](../README.md)
 
 <h1 align="center" style="font-family: Georgia">日本語文字分析器</h1>
 <p align="center" style="font-family: Verdana">ひらがな＆カタカナ＆漢字 頻度数測定器</p>

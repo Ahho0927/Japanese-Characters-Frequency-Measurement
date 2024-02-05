@@ -1,4 +1,4 @@
-[한국어](docs/README_ko.md)[日本語](docs/README_ja.md)
+[한국어](docs/README_ko.md) [日本語](docs/README_ja.md)
 
 <h1 align="center" style="font-family: Georgia">Japanese Characters Analyzer</h1>
 <p align="center" style="font-family: Verdana">Hiragana & Katakana & Kanji Frequency Measurement</p>
