@@ -43,7 +43,7 @@ except FileNotFoundError:
             sentence = sub('・', '', sentence)
             conversation.append(sentence)
 
-    print('Loading Complete!\n')
+print('Loading Complete!\n')
 
 
 # Because the Kanji has so many characters including many unsual ones,
