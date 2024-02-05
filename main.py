@@ -81,7 +81,7 @@ for sentence in tqdm(conversation, desc='In Proccess...'):
 print('Convertion Complete!\n')
 
 
-with open('result_hiragana.txt', 'w+', encoding='utf-8') as f:
+with open('results/result_hiragana.txt', 'w+', encoding='utf-8') as f:
     for _ in range(2):
         i = 0
         for key, value in tqdm(hiragana_count.items(), desc='Saving result_hiragana.txt'):
@@ -118,7 +118,7 @@ with open('result_hiragana.txt', 'w+', encoding='utf-8') as f:
     f.write(f'ら行 : {hiragana_count['あ'] + hiragana_count['り'] + hiragana_count['る'] + hiragana_count['れ'] + hiragana_count['ろ']}\n')
     f.write(f'わ行 : {hiragana_count['あ'] +                                                                      hiragana_count['を']}\n')
 
-with open('result_katakana.txt', 'w+', encoding='utf-8') as f:
+with open('results/result_katakana.txt', 'w+', encoding='utf-8') as f:
     for _ in range(2):
         i = 0
         for key, value in tqdm(katakana_count.items(), desc='Saving result_katakana.txt'):
@@ -134,7 +134,7 @@ with open('result_katakana.txt', 'w+', encoding='utf-8') as f:
         katakana_count = dict(sorted(katakana_count.items(), key=lambda x:x[1], reverse=True))
 
 
-with open('result_romaji.txt', 'w+', encoding='utf-8') as f:
+with open('results/result_romaji.txt', 'w+', encoding='utf-8') as f:
     for _ in range(2):
         i = 0
         for key, value in tqdm(romaji_count.items(), desc='Saving result_romaji.txt'):
@@ -150,7 +150,7 @@ with open('result_romaji.txt', 'w+', encoding='utf-8') as f:
         romaji_count = dict(sorted(romaji_count.items(), key=lambda x:x[1], reverse=True))
 
 
-with open('result_kanji.txt', 'w+', encoding='utf-8') as f:
+with open('results/result_kanji.txt', 'w+', encoding='utf-8') as f:
     kanji_count = dict(sorted(kanji_count.items(), key=lambda x:x[1], reverse= True))
     i = 0
     for key, value in tqdm(kanji_count.items(), desc='Saving result_kanji.txt'):
