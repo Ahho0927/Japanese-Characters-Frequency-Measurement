@@ -29,18 +29,21 @@ system('cls')
 
 print('Loading Datas...')
 
-dataset = load_dataset("izumi-lab/llm-japanese-dataset", revision="main")
+try:
+    with open('data.txt', 'r', encoding='utf-8') as f:
+        conversation = f.readlines()
 
-print('Loading Complete!\n')
+except FileNotFoundError:
+    dataset = load_dataset("izumi-lab/llm-japanese-dataset", revision="main")
 
-conversation = []
-for data in tqdm(dataset['train'], desc='Extracting Conversations'):
-    for sentence in data.values():
-        sentence = sub('[^\u3300-\u33ff\ufe30-\ufe4f\uf900-\ufaff\U0002F800-\U0002fa1f\u2e80-\u2eff\u3040-\u309f\u30a0-\u30ff\u4e00-\u9fff\u3400-\u4dbf\U00020000-\U0002a6df\U0002a700-\U0002b73f\U0002b740-\U0002b81f\U0002b820-\U0002ceaf]', '', sentence)
-        sentence = sub('・', '', sentence)
-        conversation.append(sentence)
+    conversation = []
+    for data in tqdm(dataset['train'], desc='Extracting Conversations'):
+        for sentence in data.values():
+            sentence = sub('[^\u3300-\u33ff\ufe30-\ufe4f\uf900-\ufaff\U0002F800-\U0002fa1f\u2e80-\u2eff\u3040-\u309f\u30a0-\u30ff\u4e00-\u9fff\u3400-\u4dbf\U00020000-\U0002a6df\U0002a700-\U0002b73f\U0002b740-\U0002b81f\U0002b820-\U0002ceaf]', '', sentence)
+            sentence = sub('・', '', sentence)
+            conversation.append(sentence)
 
-print('Extraction Complete!\n')
+    print('Loading Complete!\n')
 
 
 # Because the Kanji has so many characters including many unsual ones,
