@@ -15,7 +15,7 @@ To make the next project about _Japanese Steno Keyboard_ more efficient, This _J
 2. Wait for it still the end.
 3. Check the results.
 
-_**[ ! ] if there's no `data.txt`file, it will load datas from [here](https://huggingface.co/datasets/izumi-lab/llm-japanese-dataset).\
+_**[ ! ] if `data.txt` file doesn't exist, it will load datas from [here](https://huggingface.co/datasets/izumi-lab/llm-japanese-dataset).\
 It will download a large data and can take a long time at initial excution.**_
 
 

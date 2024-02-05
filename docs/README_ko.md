@@ -14,7 +14,7 @@
 3. 결과를 확인한다.
 
 _**[ ! ] 만약 `data.txt`이 존재하지 않는다면 [여기](https://huggingface.co/datasets/izumi-lab/llm-japanese-dataset)에서 분석용 데이터를 추출합니다.\
-데이터의 용량이 **_
+데이터의 용량이 크므로 초기 실행 시 오랜 시간이 걸릴 수 있습니다.**_
 
 
 ## TODO
