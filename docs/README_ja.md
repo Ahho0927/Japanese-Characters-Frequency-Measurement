@@ -13,7 +13,7 @@
 2. 待つ。
 3. 結果を確認する。
 
-_**[ ! ] もし`data.txt`が存在しないと[ここ](https://huggingface.co/datasets/izumi-lab/llm-japanese-dataset)から分析データを抽出します。\
+_**[ ! ] もし`data.txt`が存在しないと[ここ](https://huggingface.co/datasets/izumi-lab/llm-japanese-dataset)から分析データをロードします。\
 データの容量が多いので、初実行には時間が多くかかるかもしれません。**_
 
 
